@@ -9,5 +9,11 @@
     "password": "Free To Copy",
     "enjoyment": "0",
     "records": [
+        {
+            "user": "Maxdeligeo",
+            "link": "https://youtu.be/pKexSsLaWF0",
+            "percent": 100,
+            "hz": 0
+         }
     ]
 }
