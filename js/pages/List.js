@@ -51,7 +51,7 @@ export default {
                             <p>{{ level.id }}</p>
                         </li>
                         <li>
-                            <div class="type-title-sm">Verifier Enjoyment 1-10</div>
+                            <div class="type-title-sm">Method</div>
                             <p>{{ level.enjoyment || 'None (0)' }}</p>
                         </li>
                     </ul>
