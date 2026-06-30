@@ -9,9 +9,11 @@
     "password": "Free To Copy",
     "enjoyment": "Medium Demon",
     "records": [
-      "user": "Goldenfyre101",
-      "link": "https://www.youtube.com/watch?v=7zjbqJ7vQj0",
-      "percent": 100,
-      "hz": 0
+         {
+           "user": "Goldenfyre101",
+           "link": "https://www.youtube.com/watch?v=7zjbqJ7vQj0",
+           "percent": 100,
+           "hz": 0
+              },
     ]
 }
