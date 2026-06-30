@@ -100,28 +100,22 @@ export default {
                     </template>
                     <h3>Submission Requirements</h3>
                     <p>
-                        Your level <strong>must</strong> be under 30 seconds.
+                        Your level <strong>must</strong> be longer than 30 seconds.
                     </p>
                     <p>
-                        Level must be harder than the level at the lowest spot on the list.
+                        Your Level must be harder than the level at the lowest spot on the list.
                     </p>
                     <p>
                         No inappropriate levels, as this includes NSFW levels/videos.
                     </p>
                     <p>
-                       Levels verified/beat with a cps cap will be placed separately.
+                       Your Level must be a rated demon in the Goldenfyre101 GDPS (If it is unrated it will be removed)
                     </p>
                     <p>
-                        Levels verified/beat with a method outside alternating will be placed separately.
+                        Insane and Extreme demons must include a youtube video of the verification including a cheat indicator, shows the end screen, shows the entirety of the level, includes clicks, is done on the original copy, and ofc is done without the use of cheats.
                     </p>
                     <p>
                         Secret ways are <strong>absolutely</strong> prohibited.
-                    </p>
-                    <p>
-                        Levels have to be 30fps 15cps.
-                    </p>
-                    <p>
-                        The difficulty must be spam.
                     </p>
                     <p>
                         Noclip is allowed as long as you have 0 deaths or 100% Accuracy.
@@ -129,8 +123,6 @@ export default {
                     <p>
                         Clicks must be heard. Click Sounds aren't allowed.
                     </p>
-                     <p>
-                        You have to be on the latest version of Geometry Dash in order to get your completions/verifications accepted.
                 </div>
             </div>
         </main>
