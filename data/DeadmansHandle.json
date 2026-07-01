@@ -9,5 +9,11 @@
     "password": "Free To Copy",
     "enjoyment": "Hard Demon",
     "records": [
+        {
+           "user": "miokii",
+           "link": "https://youtu.be/lZD3oIf3mUo",
+           "percent": 100,
+           "hz": 240
+              }
     ]
 }
