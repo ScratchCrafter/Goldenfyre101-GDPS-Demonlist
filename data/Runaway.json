@@ -9,5 +9,11 @@
     "password": "Free To Copy",
     "enjoyment": "Easy Demon",
     "records": [
+        {
+           "user": "Nange",
+           "link": "https://www.youtube.com/watch?v=N-tuyZM9TXA",
+           "percent": 100,
+           "hz": 240
+              }
     ]
 }
