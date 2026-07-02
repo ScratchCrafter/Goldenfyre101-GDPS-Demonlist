@@ -9,5 +9,11 @@
     "password": "Free To Copy",
     "enjoyment": "Insane Demon",
     "records": [
+        {
+           "user": "miokii",
+           "link": "https://youtu.be/Sp2OM_-V66A",
+           "percent": 100,
+           "hz": 240
+              }
     ]
 }
