@@ -1,0 +1,3 @@
+name = "goldenfyre-gdps-demonlist"
+main = "src/index.html"
+compatibility_date = "2026-07-08"
