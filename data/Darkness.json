@@ -9,5 +9,17 @@
     "password": "Free To Copy",
     "enjoyment": "Easy Demon",
     "records": [
+        {
+           "user": "MibuTheCat",
+           "link": "https://youtu.be/si1kua_V_XA",
+           "percent": 100,
+           "hz": 240
+              },
+        {
+           "user": "miokii",
+           "link": "https://youtu.be/gNo-IhVvXc4?si=X9XEuBOpI5zNAfe2",
+           "percent": 100,
+           "hz": 240
+              }
     ]
 }
