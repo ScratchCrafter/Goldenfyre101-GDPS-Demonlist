@@ -9,5 +9,11 @@
     "password": "Free To Copy",
     "enjoyment": "Extreme Demon",
     "records": [
+        {
+           "user": "Gamer862",
+           "link": "https://youtu.be/jcJ83GXprP4",
+           "percent": 100,
+           "hz": 240
+              }
     ]
 }
