@@ -9,15 +9,21 @@
     "password": "Free To Copy",
     "enjoyment": "Medium Demon",
     "records": [
-         {
+        {
            "user": "Goldenfyre101",
            "link": "https://www.youtube.com/watch?v=7zjbqJ7vQj0",
            "percent": 100,
            "hz": 240
               },
-          {
+        {
            "user": "miokii",
            "link": "https://youtu.be/Wgjw-pFEeCA",
+           "percent": 100,
+           "hz": 240
+              },
+        {
+           "user": "geo",
+           "link": "https://www.youtube.com/watch?v=nqRIr8kq6sY",
            "percent": 100,
            "hz": 240
               }
