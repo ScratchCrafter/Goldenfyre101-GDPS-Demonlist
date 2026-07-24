@@ -9,5 +9,11 @@
     "password": "Free To Copy",
     "enjoyment": "Extreme Demon",
     "records": [
+        {
+           "user": "miokii",
+           "link": "https://www.youtube.com/watch?v=kqZxC9ulGcA",
+           "percent": 100,
+           "hz": 240
+              }
     ]
 }
