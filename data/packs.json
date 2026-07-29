@@ -1,0 +1,13 @@
+[
+    {
+        "name": "The Epikest Pack",
+        "description": "All levels created by the one and only EpikGuy.",
+        "bonus": 250,
+        "levels": [
+            "BRIGHTNESS",
+            "EGGNEVERCLEARRE",
+            "GLORINESS",
+	    "SHINING",
+        ]
+    }
+]

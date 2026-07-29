@@ -1,4 +1,10 @@
 import routes from './routes.js';
+import Packs from "./pages/packs.js";
+
+{
+    path: "/packs",
+    component: Packs
+}
 
 export const store = Vue.reactive({
     dark: JSON.parse(localStorage.getItem('dark')) || false,
