@@ -9,5 +9,11 @@
     "password": "Free To Copy",
     "enjoyment": "Easy Demon",
     "records": [
+        {
+           "user": "Emmber",
+           "link": "https://youtu.be/i56pcjoxKoI?si=gaye8-iTve-JxT6l",
+           "percent": 100,
+           "hz": 240
+              }
     ]
 }
