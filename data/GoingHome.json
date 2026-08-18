@@ -9,5 +9,11 @@
     "password": "Free To Copy",
     "enjoyment": "Extreme Demon",
     "records": [
+        {
+           "user": "Cheese",
+           "link": "https://medal.tv/games/geometry-dash/clips/ni9n8ChzIfGu-gNAI?invite=cr-MSxOa0csMjAxNzk4MDE2",
+           "percent": 100,
+           "hz": 240
+              }
     ]
 }
