@@ -9,5 +9,11 @@
     "password": "Free To Copy",
     "enjoyment": "Insane Demon",
     "records": [
+        {
+           "user": "Emmber",
+           "link": "https://youtu.be/3Zpnyw4urmM?si=GGrUFr5KqQkfFkkV",
+           "percent": 100,
+           "hz": 240
+              }
     ]
 }
