@@ -45,9 +45,15 @@
            "percent": 100,
            "hz": 240
               },
-          {
+        {
            "user": "geo",
            "link": "https://www.youtube.com/watch?v=R5kB9mmM-i4",
+           "percent": 100,
+           "hz": 240
+              },
+        {
+           "user": "AltifyNeverDies",
+           "link": "https://youtu.be/RhJe5Qw7OOY?si=PSuV6lwW5TMmCNct",
            "percent": 100,
            "hz": 240
               }
