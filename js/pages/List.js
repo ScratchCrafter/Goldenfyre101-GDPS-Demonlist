@@ -28,7 +28,14 @@ export default {
                             <p v-if="i + 1 <= 151" class="type-label-lg">#{{ i + 1 }}</p>
                             <p v-else class="type-label-lg">Legacy</p>
                         </td>
-                        <td class="level" :class="{ 'active': selected == i, 'error': !level }">
+                       <td
+                         class="level"
+                         :class="{
+                             'active': selected == i,
+                             'error': !level,
+                             'inactive': i + 1 > 50
+                         }"
+                        >
                             <button @click="selected = i">
                                 <span class="type-label-lg">{{ level?.name || \`Error (\${err}.json)\` }}</span>
                             </button>
