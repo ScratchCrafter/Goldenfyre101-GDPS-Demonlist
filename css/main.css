@@ -95,6 +95,7 @@ input[type="checkbox"] {
     margin: 0;
 }
 
+.list .rank.inactive,
 .list .level.inactive {
     opacity: 0.45;
 }
