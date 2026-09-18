@@ -9,9 +9,15 @@
     "password": "Free To Copy",
     "enjoyment": "Medium Demon",
     "records": [
-{
+        {
            "user": "AltifyNeverDies",
            "link": "https://youtu.be/-V9qffHMrb4?si=SyRN16SLDHx_JDoq",
+           "percent": 100,
+           "hz": 240
+              },
+        {
+           "user": "Cheese",
+           "link": "https://medal.tv/games/geometry-dash/clips/nyo5caSS0M0ujOLhJ?invite=cr-MSxJa08sMjAxNzk4MDE2",
            "percent": 100,
            "hz": 240
               }
