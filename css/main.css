@@ -94,3 +94,11 @@ input[type="checkbox"] {
     cursor: pointer;
     margin: 0;
 }
+
+.list .level.inactive {
+    opacity: 0.45;
+}
+
+.list .level.inactive button {
+    color: inherit;
+}
