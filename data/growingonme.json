@@ -39,9 +39,15 @@
            "percent": 100,
            "hz": 240
               },
-                {
+        {
            "user": "Absoluteinf1",
            "link": "https://www.youtube.com/watch?v=slQLhNEqvh8",
+           "percent": 100,
+           "hz": 240
+              },
+        {
+           "user": "AltifyNeverDies",
+           "link": "https://youtu.be/u4U8t2_c4IE?si=-1lrAw8lVNH0KrBr",
            "percent": 100,
            "hz": 240
               }
