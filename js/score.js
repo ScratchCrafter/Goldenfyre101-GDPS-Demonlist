@@ -4,6 +4,27 @@
 const scale = 3;
 
 /**
+ * Top score, awarded at rank 1 (100%)
+ */
+const TOP_SCORE = 300;
+
+/**
+ * Score awarded at the last ranked spot (rank MAX_RANK, 100%)
+ */
+const MIN_SCORE = 20;
+
+/**
+ * Last rank that still earns points
+ */
+const MAX_RANK = 75;
+
+/**
+ * Exponent for the power-law (Zipf-like) rank curve, solved so that
+ * TOP_SCORE / MAX_RANK^RANK_EXPONENT == MIN_SCORE
+ */
+const RANK_EXPONENT = Math.log(TOP_SCORE / MIN_SCORE) / Math.log(MAX_RANK);
+
+/**
  * Calculate the score awarded when having a certain percentage on a list level
  * @param {Number} rank Position on the list
  * @param {Number} percent Percentage of completion
@@ -11,17 +32,14 @@ const scale = 3;
  * @returns {Number}
  */
 export function score(rank, percent, minPercent) {
-    if (rank > 50) {
+    if (rank > MAX_RANK) {
         return 0;
     }
 
-    // Old formula
-    /*
-    let score = (100 / Math.sqrt((rank - 1) / 50 + 0.444444) - 50) *
-        ((percent - (minPercent - 1)) / (100 - (minPercent - 1)));
-    */
-    // New formula
-    let score = (-66.6667*Math.pow(rank-1, 0.4) + 350) *
+    // Zipf-like power-law curve: rank 1 -> TOP_SCORE, rank MAX_RANK -> MIN_SCORE
+    let rankScore = TOP_SCORE / Math.pow(rank, RANK_EXPONENT);
+
+    let score = rankScore *
         ((percent - (minPercent - 1)) / (100 - (minPercent - 1)));
 
     score = Math.max(0, score);
