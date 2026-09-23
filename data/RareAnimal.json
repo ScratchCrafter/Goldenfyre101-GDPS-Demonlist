@@ -9,5 +9,11 @@
     "password": "Free To Copy",
     "enjoyment": "Insane Demon",
     "records": [
+        {
+           "user": "geo",
+           "link": "https://youtu.be/qPLSXTjtni4",
+           "percent": 100,
+           "hz": 240
+              }
     ]
 }
