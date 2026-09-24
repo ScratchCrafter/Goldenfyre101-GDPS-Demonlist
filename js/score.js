@@ -16,15 +16,19 @@ const MAX_RANK = 75;
  *
  * Fitted to three anchor points:
  *   rank 1  -> 350
- *   rank 5  -> 190
- *   rank 75 -> 20
+ *   rank 15 -> 140
+ *   rank 75 -> 25
  *
- * If you want different anchors, these three constants need to be re-fit
+ * Written as a ratio relative to rank 1's score, since the fitted shift
+ * constant (RANK_C) is large and a raw A/(rank+c)^p form gets numerically
+ * messy at that scale.
+ *
+ * If you want different anchors, these constants need to be re-fit
  * (it's a small nonlinear solve, not a simple formula) - just ask.
  */
-const RANK_C = 3.975;
-const RANK_P = 1.0354;
-const RANK_A = 1844.15;
+const TOP_SCORE = 350;
+const RANK_C = 18.08;
+const RANK_P = 1.6653;
 
 /**
  * Calculate the score awarded when having a certain percentage on a list level
@@ -38,8 +42,8 @@ export function score(rank, percent, minPercent) {
         return 0;
     }
 
-    // Shifted power-law (Zipf-Mandelbrot-like) curve
-    let rankScore = RANK_A / Math.pow(rank + RANK_C, RANK_P);
+    // Shifted power-law (Zipf-Mandelbrot-like) curve, as a ratio to TOP_SCORE
+    let rankScore = TOP_SCORE * Math.pow((1 + RANK_C) / (rank + RANK_C), RANK_P);
 
     let score = rankScore *
         ((percent - (minPercent - 1)) / (100 - (minPercent - 1)));
