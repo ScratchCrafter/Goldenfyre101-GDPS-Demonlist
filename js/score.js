@@ -4,6 +4,29 @@
 const scale = 3;
 
 /**
+ * Last rank that still earns points
+ */
+const MAX_RANK = 75;
+
+/**
+ * Shifted power-law rank curve: score(rank) = A / (rank + C) ^ P
+ *
+ * This is a "Zipf-Mandelbrot"-style curve: like Zipf's law (1/rank^s) but with
+ * a shift constant C that softens the drop-off between the very top ranks.
+ *
+ * Fitted to three anchor points:
+ *   rank 1  -> 300
+ *   rank 5  -> 160
+ *   rank 75 -> 20
+ *
+ * If you want different anchors, these three constants need to be re-fit
+ * (it's a small nonlinear solve, not a simple formula) - just ask.
+ */
+const RANK_C = 3.05;
+const RANK_P = 0.9146;
+const RANK_A = 1078.35;
+
+/**
  * Calculate the score awarded when having a certain percentage on a list level
  * @param {Number} rank Position on the list
  * @param {Number} percent Percentage of completion
@@ -11,17 +34,14 @@ const scale = 3;
  * @returns {Number}
  */
 export function score(rank, percent, minPercent) {
-    if (rank > 75) {
+    if (rank > MAX_RANK) {
         return 0;
     }
 
-    // Old formula
-    /*
-    let score = (100 / Math.sqrt((rank - 1) / 50 + 0.444444) - 50) *
-        ((percent - (minPercent - 1)) / (100 - (minPercent - 1)));
-    */
-    // New formula
-    let score = (-66.6667*Math.pow(rank-1, 0.4) + 350) *
+    // Shifted power-law (Zipf-Mandelbrot-like) curve
+    let rankScore = RANK_A / Math.pow(rank + RANK_C, RANK_P);
+
+    let score = rankScore *
         ((percent - (minPercent - 1)) / (100 - (minPercent - 1)));
 
     score = Math.max(0, score);
