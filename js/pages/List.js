@@ -33,7 +33,7 @@ export default {
                          :class="{
                              'active': selected == i,
                              'error': !level,
-                             'inactive': i + 1 > 50
+                             'inactive': i + 1 > 75
                          }"
                         >
                             <button @click="selected = i">
