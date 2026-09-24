@@ -15,16 +15,16 @@ const MAX_RANK = 75;
  * a shift constant C that softens the drop-off between the very top ranks.
  *
  * Fitted to three anchor points:
- *   rank 1  -> 300
- *   rank 5  -> 160
+ *   rank 1  -> 350
+ *   rank 5  -> 190
  *   rank 75 -> 20
  *
  * If you want different anchors, these three constants need to be re-fit
  * (it's a small nonlinear solve, not a simple formula) - just ask.
  */
-const RANK_C = 3.05;
-const RANK_P = 0.9146;
-const RANK_A = 1078.35;
+const RANK_C = 3.975;
+const RANK_P = 1.0354;
+const RANK_A = 1844.15;
 
 /**
  * Calculate the score awarded when having a certain percentage on a list level
