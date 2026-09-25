@@ -28,7 +28,7 @@ const MAX_RANK = 75;
  */
 const TOP_SCORE = 350;
 const RANK_C = 20.5;
-const RANK_P = 1.72;
+const RANK_P = 1.7;
 
 /**
  * Calculate the score awarded when having a certain percentage on a list level
