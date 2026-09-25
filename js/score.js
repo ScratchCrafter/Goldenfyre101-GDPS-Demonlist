@@ -27,8 +27,8 @@ const MAX_RANK = 75;
  * (it's a small nonlinear solve, not a simple formula) - just ask.
  */
 const TOP_SCORE = 350;
-const RANK_C = 20;
-const RANK_P = 1.75;
+const RANK_C = 23;
+const RANK_P = 1.68;
 
 /**
  * Calculate the score awarded when having a certain percentage on a list level
