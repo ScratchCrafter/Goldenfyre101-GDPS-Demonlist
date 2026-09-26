@@ -69,9 +69,15 @@
            "percent": 100,
            "hz": 240
               },
-                {
+        {
            "user": "3Doffisa",
            "link": "https://www.youtube.com/watch?v=7RLOm7HFYHA",
+           "percent": 100,
+           "hz": 240
+              },
+        {
+           "user": "Umi",
+           "link": "https://youtu.be/-s5TFg6_qwM?si=of3FZmy7N3qGOXl5",
            "percent": 100,
            "hz": 240
               }
