@@ -6,6 +6,20 @@ import { round, score } from './score.js';
 const dir = '/data';
 
 export async function fetchList() {
+    const packs = await fetchPacks();
+
+    const levelToPacks = {};
+
+    if (packs) {
+        packs.forEach(pack => {
+            (pack.levels ?? []).forEach(levelId => {
+                (levelToPacks[levelId] ??= []).push({
+                    name: pack.name,
+                    colour: pack.colour,
+                });
+            });
+        });
+    }
     const listResult = await fetch(`${dir}/_list.json`);
     try {
         const list = await listResult.json();
@@ -18,6 +32,7 @@ export async function fetchList() {
                         {
                             ...level,
                             path,
+                            packs: levelToPacks[path] ?? [],
                             records: level.records.sort(
                                 (a, b) => b.percent - a.percent,
                             ),
@@ -115,10 +130,87 @@ export async function fetchLeaderboard() {
         return {
             user,
             total: round(total),
+            packs: [],
             ...scores,
         };
     });
+    /* ================= PACK COMPLETION ================= */
+
+const packs = await fetchPacks();
+
+if (packs) {
+    res.forEach(player => {
+const completedIds = new Set([
+    ...player.completed
+        .map(level => level.levelPath)
+        .filter(Boolean),
+
+    ...player.verified
+        .map(level => level.levelPath)
+        .filter(Boolean),
+]);
+        player.packs = packs.filter(pack => {
+            const levels = pack.levels ?? [];
+
+            if (levels.length === 0) return false;
+
+            return levels.every(levelId =>
+                completedIds.has(levelId)
+            );
+        });
+    });
+}
+
+/* =================================================== */
 
     // Sort by total score
     return [res.sort((a, b) => b.total - a.total), errs];
+}
+export async function fetchPacks() {
+    try {
+        const res = await fetch(`${dir}/_packlist.json`);
+        return await res.json();
+    } catch {
+        return null;
+    }
+}
+
+export async function fetchPackLevels(packName) {
+    try {
+        const packs = await fetchPacks();
+
+        if (!packs) return null;
+
+        const pack = packs.find(p => p.name === packName);
+
+        if (!pack) return null;
+
+        return await Promise.all(
+            pack.levels.map(async (path, idx) => {
+                try {
+                    const levelRes = await fetch(`${dir}/${path}.json`);
+                    const level = await levelRes.json();
+
+                    return [{
+                        level: {
+                            ...level,
+                            path,
+                            records: (level.records ?? [])
+                                .sort((a, b) => b.percent - a.percent)
+                        }
+                    }, null];
+
+                } catch {
+                    console.error(
+                        `Failed to load pack level #${idx + 1}: ${path}.json`
+                    );
+
+                    return [null, path];
+                }
+            })
+        );
+
+    } catch {
+        return null;
+    }
 }
