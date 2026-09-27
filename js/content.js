@@ -90,7 +90,7 @@ export async function fetchLeaderboard() {
         link: level.verification,
        enjoyment: level.enjoyment,
       });
-    }
+    })
 
     // Records
     level.records.forEach((record) => {
