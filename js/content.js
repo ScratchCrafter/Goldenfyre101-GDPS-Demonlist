@@ -63,8 +63,6 @@ export async function fetchEditors() {
 
 export async function fetchLeaderboard() {
   const list = await fetchList();
-  const openVerifications = await fetchOpenVerifications();
-
   const scoreMap = {};
   const errs = [];
 
