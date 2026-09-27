@@ -9,9 +9,15 @@
     "password": "Free To Copy",
     "enjoyment": "Medium Demon",
     "records": [
-{
+        {
            "user": "Emmber",
            "link": "https://youtu.be/r4Bar3r-2Jw?si=C3DTcdJcYdGxpUqj",
+           "percent": 100,
+           "hz": 240
+              },
+        {
+           "user": "AltifyNeverDies",
+           "link": "https://www.youtube.com/watch?v=PNfL2x4CwYs",
            "percent": 100,
            "hz": 240
               }
