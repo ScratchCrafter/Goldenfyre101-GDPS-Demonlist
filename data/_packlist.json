@@ -1,9 +1,167 @@
 [
   {
-    "name": "Top 1 pack",
+    "name": "Top 1 Pack",
     "levels": [
+      "EGGNEVERCLEARRE",
+      "GoldenfyreChallenge",
       "TheAbyss"
     ],
-    "colour": "#00bbff"
-  }
+    "colour": "#e64843"
+  },
+  {
+    "name": "XL Pack",
+    "levels": [
+      "Darkness",
+      "growingonme",
+      "TheKiller"
+    ],
+    "colour": "#ff54af"
+  },
+  {
+    "name": "XL Pack II",
+    "levels": [
+      "DeepEnd",
+      "Firewall",
+      "SaveMe"
+    ],
+    "colour": "#f21b8e"
+  },
+  {
+    "name": "XL Pack III",
+    "levels": [
+      "EveryEndLeashed",
+      "XENOSCAPE"
+    ],
+    "colour": "#db0979"
+  },
+  {
+    "name": "The Epik Pack",
+    "levels": [
+      "SHINING",
+      "NoSurprises",
+      "GLORINESS",
+      "BRIGHTNESS",
+      "EGGNEVERCLEARRE"
+    ],
+    "colour": "#fff538"
+  },
+  {
+    "name": "The Quacc Pack",
+    "levels": [
+      "CutYouOff",
+      "HappyBirthdayGoldie",
+      "Heatwave"
+    ],
+    "colour": "#ffac38"
+  },
+  {
+    "name": "The Nange Pack",
+    "levels": [
+      "Stroll",
+      "Pyrarrmaniac",
+      "NoCure"
+    ],
+    "colour": "#ffac38"
+  },
+  {
+    "name": "The Beeguy Pack",
+    "levels": [
+      "ToBeComplete",
+      "TheKiller",
+      "LancerDeltarune",
+      "InItsRightPlace",
+      "DoodleRush",
+      "Petal",
+      "RareAnimal",
+      "HailToTheThief"
+    ],
+    "colour": "#bcff47"
+  },
+  {
+    "name": "Collaboration Pack",
+    "levels": [
+      "HappyBirthdayGoldie",
+      "XENOSCAPE",
+      "Pyrarrmaniac"
+    ],
+    "colour": "#c338ff"
+  },
+  {
+    "name": "Gamer862 Verification Pack",
+    "levels": [
+      "NoSurprises",
+      "MyMeat",
+      "EGGNEVERCLEARRE"
+    ],
+    "colour": "#5c70f7"
+  },
+  {
+    "name": "Gamer862 Verification Pack II",
+    "levels": [
+      "BRIGHTNESS",
+      "PlanumAstrale",
+      "TheAbyss"
+    ],
+    "colour": "#3346c4"
+  },
+  {
+    "name": "Emmber Verification Pack",
+    "levels": [
+      "Stalemate",
+      "EveryEndLeashed"
+    ],
+    "colour": "#f2c13a"
+  },
+  {
+    "name": "Emmber Verification Pack II",
+    "levels": [
+      "Octane",
+      "SixxSevvend",
+      "Sakupenhouse"
+    ],
+    "colour": "#dba307"
+  },
+  {
+    "name": "Caesium Factorial Pack",
+    "levels": [
+      "CaesiumFactorial1",
+      "CaesiumFactorial2",
+      "CaesiumFactorial3"
+    ],
+    "colour": "#2db50e"
+  },
+  {
+    "name": "Nine Circles Pack",
+    "levels": [
+      "FutureCircles",
+      "BlankPlanet",
+      "ColonThreeCircles"
+    ],
+    "colour": "#61ffff"
+  },
+  {
+    "name": "Nine Circles Pack II",
+    "levels": [
+      "NoCure",
+      "Heatwave"
+    ],
+    "colour": "#09d9d9"
+  },
+  {
+    "name": "One Gamemode Pack",
+    "levels": [
+      "CutYouOff",
+      "ReturnEnd",
+      "ViprinSpider"
+    ],
+    "colour": "#8d30ff"
+  },
+  {
+    "name": "One Gamemode Pack II",
+    "levels": [
+      "EveryEndLeashed",
+      "PlanumAstrale",
+    ],
+    "colour": "#6f10e3"
+  },
 ]
