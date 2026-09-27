@@ -66,13 +66,6 @@ export async function fetchLeaderboard() {
   const scoreMap = {};
   const errs = [];
 
-  // Check whether a username is blacklisted.
-  const isBlacklisted = (username) =>
-    leaderboardBlacklist.some(
-      (blacklisted) =>
-        blacklisted.toLowerCase() === username.toLowerCase(),
-    );
-
   list.forEach(([level, err], rank) => {
     if (err) {
       errs.push(err);
@@ -80,10 +73,6 @@ export async function fetchLeaderboard() {
     }
 
     // Verification
-    if (!isBlacklisted(level.verifier)) {
-      const verifier = Object.keys(scoreMap).find(
-        (u) => u.toLowerCase() === level.verifier.toLowerCase(),
-      ) || level.verifier;
 
       scoreMap[verifier] ??= {
         verified: [],
@@ -143,9 +132,6 @@ export async function fetchLeaderboard() {
     });
   });
         level.records.forEach((record) => {
-            if (isBlacklisted(record.user)) {
-                return;
-            }
 
             const user = Object.keys(scoreMap).find(
                 (u) => u.toLowerCase() === record.user.toLowerCase(),
