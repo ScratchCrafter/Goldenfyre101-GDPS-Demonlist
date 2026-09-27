@@ -130,7 +130,7 @@ export async function fetchLeaderboard() {
         link: record.link,
       });
     });
-  });
+  };
         level.records.forEach((record) => {
 
             const user = Object.keys(scoreMap).find(
