@@ -1,10 +1,8 @@
 [
   {
-    "name": "Top 3 pack",
+    "name": "Top 1 pack",
     "levels": [
-      "TheAbyss",
-      "PlanumAstrale",
-      "HAILTOTHETHIEF"
+      "TheAbyss"
     ],
     "colour": "#00bbff"
   }
