@@ -62,79 +62,152 @@ export async function fetchEditors() {
 }
 
 export async function fetchLeaderboard() {
-    const list = await fetchList();
+  const list = await fetchList();
+  const openVerifications = await fetchOpenVerifications();
 
-    const scoreMap = {};
-    const errs = [];
-    list.forEach(([level, err], rank) => {
-        if (err) {
-            errs.push(err);
+  const scoreMap = {};
+  const errs = [];
+
+  // Check whether a username is blacklisted.
+  const isBlacklisted = (username) =>
+    leaderboardBlacklist.some(
+      (blacklisted) =>
+        blacklisted.toLowerCase() === username.toLowerCase(),
+    );
+
+  list.forEach(([level, err], rank) => {
+    if (err) {
+      errs.push(err);
+      return;
+    }
+
+    // Verification
+    if (!isBlacklisted(level.verifier)) {
+      const verifier = Object.keys(scoreMap).find(
+        (u) => u.toLowerCase() === level.verifier.toLowerCase(),
+      ) || level.verifier;
+
+      scoreMap[verifier] ??= {
+        verified: [],
+        completed: [],
+        progressed: [],
+      };
+
+      const { verified } = scoreMap[verifier];
+
+      verified.push({
+        rank: rank + 1,
+        level: level.name,
+        levelPath: level.path,
+        score: score(rank + 1, 100, level.percentToQualify),
+        link: level.verification,
+       enjoyment: level.enjoyment,
+      });
+    }
+
+    // Records
+    level.records.forEach((record) => {
+      if (isBlacklisted(record.user)) {
+        return;
+      }
+
+      const user = Object.keys(scoreMap).find(
+        (u) => u.toLowerCase() === record.user.toLowerCase(),
+      ) || record.user;
+
+      scoreMap[user] ??= {
+        verified: [],
+        completed: [],
+        progressed: [],
+      };
+
+      const { completed, progressed } = scoreMap[user];
+
+        if (record.percent === 100) {
+            completed.push({
+                rank: rank + 1,
+                level: level.name,
+                levelPath: level.path,
+                score: score(rank + 1, 100, level.percentToQualify),
+                link: record.link,
+                enjoyment: record.enjoyment,
+            });
+
+            return;
+        }
+      progressed.push({
+        rank: rank + 1,
+        level: level.name,
+        percent: record.percent,
+        score: score(rank + 1, record.percent, level.percentToQualify),
+        link: record.link,
+      });
+    });
+  });
+if (openVerifications) {
+    openVerifications.forEach(([level, err]) => {
+        if (err || !level) {
             return;
         }
 
-        // Verification
-        const verifier = Object.keys(scoreMap).find(
-            (u) => u.toLowerCase() === level.verifier.toLowerCase(),
-        ) || level.verifier;
-        scoreMap[verifier] ??= {
-            verified: [],
-            completed: [],
-            progressed: [],
-        };
-        const { verified } = scoreMap[verifier];
-        verified.push({
-            rank: rank + 1,
-            level: level.name,
-            score: score(rank + 1, 100, level.percentToQualify),
-            link: level.verification,
-        });
-
-        // Records
         level.records.forEach((record) => {
+            if (isBlacklisted(record.user)) {
+                return;
+            }
+
             const user = Object.keys(scoreMap).find(
                 (u) => u.toLowerCase() === record.user.toLowerCase(),
             ) || record.user;
+
             scoreMap[user] ??= {
                 verified: [],
                 completed: [],
                 progressed: [],
             };
+
             const { completed, progressed } = scoreMap[user];
+
             if (record.percent === 100) {
                 completed.push({
-                    rank: rank + 1,
+                    rank: null,
                     level: level.name,
-                    score: score(rank + 1, 100, level.percentToQualify),
+                    score: 0,
+                    percent: 100,
                     link: record.link,
+                    openVerification: true,
                 });
+
                 return;
             }
 
             progressed.push({
-                rank: rank + 1,
+                rank: null,
                 level: level.name,
                 percent: record.percent,
-                score: score(rank + 1, record.percent, level.percentToQualify),
+                score: 0,
                 link: record.link,
+                openVerification: true,
             });
         });
     });
+}
 
-    // Wrap in extra Object containing the user and total score
-    const res = Object.entries(scoreMap).map(([user, scores]) => {
-        const { verified, completed, progressed } = scores;
-        const total = [verified, completed, progressed]
-            .flat()
-            .reduce((prev, cur) => prev + cur.score, 0);
+  // Wrap in extra Object containing the user and total score
+const res = Object.entries(scoreMap).map(([user, scores]) => {
+    const { verified, completed, progressed } = scores;
+    const total = [verified, completed, progressed]
+        .flat()
+        .reduce((prev, cur) => prev + cur.score, 0);
 
-        return {
-            user,
-            total: round(total),
-            packs: [],
-            ...scores,
-        };
-    });
-    /* ================= PACK COMPLETION ================= */
+    return {
+        user,
+        total: round(total),
+        packs: [],
+        ...scores,
+    };
+});
+
+/* ================= PACK COMPLETION ================= */
 
 const packs = await fetchPacks();
 
@@ -162,9 +235,8 @@ const completedIds = new Set([
 }
 
 /* =================================================== */
-
-    // Sort by total score
-    return [res.sort((a, b) => b.total - a.total), errs];
+  // Sort by total score
+  return [res.sort((a, b) => b.total - a.total), errs];
 }
 export async function fetchPacks() {
     try {
