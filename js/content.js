@@ -142,12 +142,6 @@ export async function fetchLeaderboard() {
       });
     });
   });
-if (openVerifications) {
-    openVerifications.forEach(([level, err]) => {
-        if (err || !level) {
-            return;
-        }
-
         level.records.forEach((record) => {
             if (isBlacklisted(record.user)) {
                 return;
@@ -172,7 +166,6 @@ if (openVerifications) {
                     score: 0,
                     percent: 100,
                     link: record.link,
-                    openVerification: true,
                 });
 
                 return;
@@ -184,7 +177,6 @@ if (openVerifications) {
                 percent: record.percent,
                 score: 0,
                 link: record.link,
-                openVerification: true,
             });
         });
     });
