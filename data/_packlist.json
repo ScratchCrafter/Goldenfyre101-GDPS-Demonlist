@@ -78,6 +78,14 @@
     "colour": "#bcff47"
   },
   {
+    "name": "Mac n Cheese Pack",
+    "levels": [
+      "Chess",
+      "MIOKIIALWAYSCLEAR"
+    ],
+    "colour": "#ffb92e"
+  },
+  {
     "name": "Collaboration Pack",
     "levels": [
       "HappyBirthdayGoldie",
@@ -163,5 +171,43 @@
       "PlanumAstrale"
     ],
     "colour": "#6f10e3"
+  },
+  {
+    "name": "Challenge Pack",
+    "levels": [
+      "DeadmansHandle",
+      "LancerDeltarune",
+      "ReturnEnd",
+      "SHINING"
+    ],
+    "colour": "#f75252"
+  },
+  {
+    "name": "Challenge Pack II",
+    "levels": [
+      "Gate",
+      "BRIGHTNESS",
+      "GoingHome",
+      "Heatwave"
+    ],
+    "colour": "#c94242"
+  },
+  {
+    "name": "Inspiration Pack",
+    "levels": [
+      "EveryEndLeashed",
+      "TheCityOfBattle",
+      "Pyrarrmaniac",
+    ],
+    "colour": "#f7f252"
+  },
+  {
+    "name": "Inspiration Pack II",
+    "levels": [
+      "GoingHome",
+      "SixxSevvend",
+      "Sakupenhouse",
+    ],
+    "colour": "#ccc743"
   }
 ]
