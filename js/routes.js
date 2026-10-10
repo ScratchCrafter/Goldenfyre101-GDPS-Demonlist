@@ -9,4 +9,5 @@ export default [
     { path: '/roulette', component: Roulette },
     { path: '/packs', component: ListPacks },
     { path: '/listpacks', component: ListPacks },
+    { path: '/upcominglist', component: UpcomingList }
 ];
