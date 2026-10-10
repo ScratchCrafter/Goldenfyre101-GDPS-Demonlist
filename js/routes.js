@@ -8,6 +8,5 @@ export default [
     { path: '/leaderboard', component: Leaderboard },
     { path: '/roulette', component: Roulette },
     { path: '/packs', component: ListPacks },
-    { path: '/listpacks', component: ListPacks },
-    { path: '/upcominglist', component: UpcomingList }
+    { path: '/listpacks', component: ListPacks }
 ];
