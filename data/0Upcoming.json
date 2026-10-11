@@ -1,14 +1,14 @@
 {
-    "layoutprogress": "80%",
-    "decoprogress": "50%",
-    "verifyingprogress": "30%",
-    "name": "Upcoming Level",
-    "creators": ["Level Creator"],
-    "verifier": "Player",
-    "verification": "https://www.youtube.com/watch?v=4aJ8DaP6WOE",
+    "layoutprogress": "100%",
+    "decoprogress": "10%",
+    "verifyingprogress": "0%",
+    "name": "Crazed Darkness III",
+    "creators": ["Quacc"],
+    "verifier": "Quacc",
+    "verification": "https://youtu.be/hz1w6pntJY8",
     "percentToQualify": "100",
     "password": "Free To Copy",
-    "enjoyment": "Hard Demon",
+    "enjoyment": "Extreme Demon",
     "records": [
     ]
 }
