@@ -1,7 +1,7 @@
 import { store } from "../main.js";
-import { embed } from "../util.js";
+import { embed, getFontColour } from "../util.js";
 import { score } from "../score.js";
-import { fetchEditors, fetchUpcomingList} from "../content.js";
+import { fetchEditors, fetchUpcomingList } from "../content.js";
 
 import Spinner from "../components/Spinner.js";
 import LevelAuthors from "../components/List/UpcomingLevelAuthors.js";
@@ -24,11 +24,18 @@ export default {
             <div class="list-container">
                 <table class="list" v-if="list">
                     <tr v-for="([level, err], i) in list">
-                        <td class="rank">
-                            <p v-if="i + 1 <= 150" class="type-label-lg">#{{ i + 1 }}</p>
+                        <td class="rank" :class="{ 'inactive': i + 1 > 75 }">
+                            <p v-if="i + 1 <= 151" class="type-label-lg">#{{ i + 1 }}</p>
                             <p v-else class="type-label-lg">Legacy</p>
                         </td>
-                        <td class="level" :class="{ 'active': selected == i, 'error': !level }">
+                       <td
+                         class="level"
+                         :class="{
+                             'active': selected == i,
+                             'error': !level,
+                             'inactive': i + 1 > 75
+                         }"
+                        >
                             <button @click="selected = i">
                                 <span class="type-label-lg">{{ level?.name || \`Error (\${err}.json)\` }}</span>
                             </button>
@@ -40,20 +47,37 @@ export default {
                 <div class="level" v-if="level">
                     <h1>{{ level.name }}</h1>
                     <LevelAuthors :author="level.author" :creators="level.creators" :verifier="level.verifier"></LevelAuthors>
+                    <div v-if="level.packs?.length" class="packs">
+                        <a
+                            v-for="pack in level.packs"
+                            class="pack type-label-sm"
+                            :style="'background-color: ' + pack.colour + '; color: ' + getFontColour(pack.colour)"
+                    :href="'/packs?pack=' + encodeURIComponent(pack.name)">
+                            {{ pack.name }}
+                        </a>
+                    </div>
                     <iframe class="video" id="videoframe" :src="video" frameborder="0"></iframe>
                     <ul class="stats">
                         <li>
-                            <div class="type-title-sm">Status</div>
-                            <p>{{ level.status }}</p>
+                            <div class="type-title-sm">Layout Progress</div>
+                            <p>{{ level.layoutprogress }}</p>
                         </li>
                         <li>
-                            <div class="type-title-sm">Password</div>
-                            <p>{{ level.password || 'Free to Copy' }}</p>
+                            <div class="type-title-sm">Deco Progress</div>
+                            <p>{{ level.decoprogress }}</p>
+                        </li>
+                        <li>
+                            <div class="type-title-sm">Verification Progress</div>
+                            <p>{{ level.verifyingprogress }}</p>
+                        </li>
+                        <li>
+                            <div class="type-title-sm">Difficulty</div>
+                            <p>{{ level.enjoyment || 'None (0)' }}</p>
                         </li>
                     </ul>
                 </div>
                 <div v-else class="level" style="height: 100%; justify-content: center; align-items: center;">
-                    <p>(ノಠ益ಠ)ノ彡┻━┻</p>
+                    <p>(Error please contact Staff</p>
                 </div>
             </div>
             <div class="meta-container">
@@ -74,6 +98,31 @@ export default {
                             </li>
                         </ol>
                     </template>
+                    <h3>Submission Requirements</h3>
+                    <p>
+                        Your level <strong>must</strong> be longer than 30 seconds.
+                    </p>
+                    <p>
+                        Your Level must be harder than the level at the lowest spot on the list.
+                    </p>
+                    <p>
+                        No inappropriate levels, as this includes NSFW levels/videos.
+                    </p>
+                    <p>
+                       Your Level must be a rated demon in the Goldenfyre101 GDPS (If it is unrated it will be removed)
+                    </p>
+                    <p>
+                        Insane and Extreme demons must include a youtube video of the verification including a cheat indicator, shows the end screen, shows the entirety of the level, includes clicks, is done on the original copy, and ofc is done without the use of cheats.
+                    </p>
+                    <p>
+                        Secret ways are <strong>absolutely</strong> prohibited.
+                    </p>
+                    <p>
+                        Noclip is allowed as long as you have 0 deaths or 100% Accuracy.
+                    </p>
+                    <p>
+                        Clicks must be heard. Click Sounds aren't allowed.
+                    </p>
                 </div>
             </div>
         </main>
@@ -131,5 +180,6 @@ export default {
     methods: {
         embed,
         score,
+        getFontColour,
     },
 };

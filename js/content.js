@@ -82,7 +82,6 @@ export async function fetchUpcomingList() {
     }
 }
 
-
 export async function fetchEditors() {
     try {
         const editorsResults = await fetch(`${dir}/_editors.json`);
