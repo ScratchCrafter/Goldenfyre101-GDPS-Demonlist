@@ -71,8 +71,8 @@ export default {
                             <p>{{ level.verifyingprogress }}</p>
                         </li>
                         <li>
-                            <div class="type-title-sm">Difficulty</div>
-                            <p>{{ level.enjoyment || 'None (0)' }}</p>
+                            <div class="type-title-sm">Projected Placement</div>
+                            <p>{{ level.placement || 'None (0)' }}</p>
                         </li>
                     </ul>
                 </div>
