@@ -24,7 +24,7 @@ export default {
             <div class="list-container">
                 <table class="list" v-if="list">
                     <tr v-for="([level, err], i) in list">
-                        <td class="rank" :class="{ 'inactive': i + 1 > 75 }">
+                        <td class="rank" :class="{ 'inactive': i + 1 > 100 }">
                             <p v-if="i + 1 <= 151" class="type-label-lg">#{{ i + 1 }}</p>
                             <p v-else class="type-label-lg">Legacy</p>
                         </td>
@@ -33,7 +33,7 @@ export default {
                          :class="{
                              'active': selected == i,
                              'error': !level,
-                             'inactive': i + 1 > 75
+                             'inactive': i + 1 > 100
                          }"
                         >
                             <button @click="selected = i">
