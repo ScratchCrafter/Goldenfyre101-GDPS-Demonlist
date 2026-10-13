@@ -6,7 +6,7 @@ const scale = 3;
 /**
  * Last rank that still earns points
  */
-const MAX_RANK = 75;
+const MAX_RANK = 100;
 
 /**
  * Shifted power-law rank curve: score(rank) = A / (rank + C) ^ P
