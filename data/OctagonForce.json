@@ -1,6 +1,6 @@
 {
     "id": 551,
-    "name": "The Abyss",
+    "name": "Octagon Force",
     "author": "JPCPro",
     "creators": [1],
     "verifier": "JPCPro",
@@ -9,5 +9,11 @@
     "password": "Free To Copy",
     "enjoyment": "Insane Demon",
     "records": [
+        {
+           "user": "miokii",
+           "link": "https://youtu.be/6jG03aW9C9A",
+           "percent": 100,
+           "hz": 240
+              }
     ]
 }
