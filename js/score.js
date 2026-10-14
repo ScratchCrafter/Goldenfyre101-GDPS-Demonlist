@@ -1,7 +1,7 @@
 /**
  * Numbers of decimal digits to round to
  */
-const scale = 3;
+const scale = 2;
 
 /**
  * Points for rank 1 (at 100%)
