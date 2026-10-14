@@ -18,7 +18,7 @@ const MIN_SCORE = 27;
  * Smaller = steeper drop at the very top, bigger = flatter / more gradual.
  * 0.1112 is fitted so that on a 100-level list: rank 1 = 350, rank 10 ~ 180, rank 100 = 27.
  */
-const SHAPE = 0.1112;
+const SHAPE = 0.111;
 
 /**
  * Exponent, solved automatically so the last level always lands on MIN_SCORE
