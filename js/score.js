@@ -4,57 +4,48 @@
 const scale = 3;
 
 /**
- * Points for rank 1 (at 100%)
+ * Last rank that still earns points
+ */
+const MAX_RANK = 100;
+
+/**
+ * Shifted power-law rank curve: score(rank) = A / (rank + C) ^ P
+ *
+ * This is a "Zipf-Mandelbrot"-style curve: like Zipf's law (1/rank^s) but with
+ * a shift constant C that softens the drop-off between the very top ranks.
+ *
+ * Fitted to three anchor points:
+ *   rank 1  -> 350
+ *   rank 15 -> 140
+ *   rank 75 -> 25
+ *
+ * Written as a ratio relative to rank 1's score, since the fitted shift
+ * constant (RANK_C) is large and a raw A/(rank+c)^p form gets numerically
+ * messy at that scale.
+ *
+ * If you want different anchors, these constants need to be re-fit
+ * (it's a small nonlinear solve, not a simple formula) - just ask.
  */
 const TOP_SCORE = 350;
-
-/**
- * Points for the LAST level on the list (at 100%), however long the list is
- */
-const MIN_SCORE = 35;
-
-/**
- * Curve shape - the only number you need to tune.
- * Smaller = steeper drop at the very top, bigger = flatter / more gradual.
- * 0.1332 is fitted so that on a 100-level list: rank 1 = 350, rank 10 ~ 200, rank 100 = 35.
- */
-const SHAPE = 0.1332;
-
-/**
- * Exponent, solved automatically so the last level always lands on MIN_SCORE
- */
-const RANK_P = Math.log(TOP_SCORE / MIN_SCORE) / Math.log((1 + SHAPE) / SHAPE);
-
-/**
- * Points for a rank on a list of a given length (at 100%).
- * Rank 1 -> TOP_SCORE exactly, last rank -> MIN_SCORE exactly.
- * @param {Number} rank Position on the list (1 = hardest)
- * @param {Number} totalLevels How many levels are on the list
- * @returns {Number}
- */
-function rankScore(rank, totalLevels) {
-    if (totalLevels <= 1) {
-        return TOP_SCORE;
-    }
-    // 0 at rank 1, 1 at the last rank
-    const t = (rank - 1) / (totalLevels - 1);
-    return TOP_SCORE * Math.pow(SHAPE / (t + SHAPE), RANK_P);
-}
+const RANK_C = 20.5;
+const RANK_P = 1.73;
 
 /**
  * Calculate the score awarded when having a certain percentage on a list level
  * @param {Number} rank Position on the list
  * @param {Number} percent Percentage of completion
  * @param {Number} minPercent Minimum percentage required
- * @param {Number} totalLevels Number of levels currently on the list
  * @returns {Number}
  */
-export function score(rank, percent, minPercent, totalLevels) {
-    if (rank > totalLevels) {
+export function score(rank, percent, minPercent) {
+    if (rank > MAX_RANK) {
         return 0;
     }
 
-    let score = rankScore(rank, totalLevels) *
+    // Shifted power-law (Zipf-Mandelbrot-like) curve, as a ratio to TOP_SCORE
+    let rankScore = TOP_SCORE * Math.pow((1 + RANK_C) / (rank + RANK_C), RANK_P);
+
+    let score = rankScore *
         ((percent - (minPercent - 1)) / (100 - (minPercent - 1)));
 
     score = Math.max(0, score);
