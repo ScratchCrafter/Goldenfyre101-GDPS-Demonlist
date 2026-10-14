@@ -11,14 +11,14 @@ const TOP_SCORE = 350;
 /**
  * Points for the LAST level on the list (at 100%), however long the list is
  */
-const MIN_SCORE = 30;
+const MIN_SCORE = 27;
 
 /**
  * Curve shape - the only number you need to tune.
  * Smaller = steeper drop at the very top, bigger = flatter / more gradual.
- * 0.1251 is fitted so that on a 100-level list: rank 1 = 350, rank 10 ~ 190, rank 100 = 30.
+ * 0.1112 is fitted so that on a 100-level list: rank 1 = 350, rank 10 ~ 180, rank 100 = 27.
  */
-const SHAPE = 0.1251;
+const SHAPE = 0.1112;
 
 /**
  * Exponent, solved automatically so the last level always lands on MIN_SCORE
