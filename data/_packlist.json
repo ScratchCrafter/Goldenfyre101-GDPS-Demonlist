@@ -66,8 +66,10 @@
   {
     "name": "The Nange Pack",
     "levels": [
+      "Bananas",
       "Stroll",
       "Pyrarrmaniac",
+      "GoldenfyreChallenge",
       "NoCure"
     ],
     "colour": "#ffac38"
