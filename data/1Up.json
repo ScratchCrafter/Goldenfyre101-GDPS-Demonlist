@@ -9,5 +9,11 @@
     "password": "Free To Copy",
     "enjoyment": "Easy Demon",
     "records": [
+        {
+           "user": "AltifyNeverDies",
+           "link": "https://www.youtube.com/watch?v=XZjZ66af-8A",
+           "percent": 100,
+           "hz": 240
+              }
     ]
 }
