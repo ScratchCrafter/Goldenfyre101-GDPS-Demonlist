@@ -1,0 +1,50 @@
+main.page-roles {
+    display: block;
+    overflow-y: auto;
+}
+
+.page-roles .roles-container {
+    max-width: 48rem;
+    margin: 0 auto;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.page-roles .roles-intro {
+    opacity: 0.8;
+    line-height: 1.5;
+}
+
+.page-roles .roles-category {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.page-roles .roles-role {
+    display: grid;
+    grid-template-columns: 11rem 1fr;
+    column-gap: 1.5rem;
+    row-gap: 0.25rem;
+    align-items: start;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid color-mix(in srgb, var(--color-on-background) 15%, transparent);
+}
+
+.page-roles .roles-description {
+    line-height: 1.5;
+}
+
+.page-roles .roles-holders {
+    grid-column: 2;
+    opacity: 0.6;
+}
+
+.page-roles .roles-role .packs {
+    margin: 0;
+}
+.page-roles .pack:hover {
+    opacity: 1;
+}
