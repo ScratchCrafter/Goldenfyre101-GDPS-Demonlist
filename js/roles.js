@@ -28,14 +28,14 @@ export const ROLES = [
     { name: 'Master Verifier', colour: '#2979ff', category: 'Verifying', group: 'verifier', description: 'Verify 10 or more levels.', check: p => p.verifiedCount >= 10 },
     { name: 'Pro Verifier', colour: '#a8ccff', category: 'Verifying', group: 'verifier', description: 'Verify 3 or more levels.', check: p => p.verifiedCount >= 3 },
 
-    { name: 'Master First Victor', colour: '#00e5ff', category: 'Victors', group: 'firstvictor', description: 'Be the first victor (first to beat it after the verifier) on 5 or more levels.', check: p => p.firstVictories >= 5 },
+    { name: 'Master First Victor', colour: '#00e5ff', category: 'Victors', group: 'firstvictor', description: 'Be the first victor on 5 or more levels.', check: p => p.firstVictories >= 5 },
     { name: 'Pro First Victor', colour: '#6ef3ff', category: 'Victors', group: 'firstvictor', description: 'Be the first victor on 3 or more levels.', check: p => p.firstVictories >= 3 },
     { name: 'First Victor', colour: '#bff8ff', category: 'Victors', group: 'firstvictor', description: 'Be the first victor on a level.', check: p => p.firstVictories >= 1 },
     { name: 'Grandmaster Grinder', colour: '#00e676', category: 'Victors', group: 'grinder', description: 'Beat 50 or more levels.', check: p => p.levelsBeaten >= 50 },
     { name: 'Master Grinder', colour: '#69f0ae', category: 'Victors', group: 'grinder', description: 'Beat 25 or more levels.', check: p => p.levelsBeaten >= 25 },
     { name: 'Pro Grinder', colour: '#c4f7d6', category: 'Victors', group: 'grinder', description: 'Beat 15 or more levels.', check: p => p.levelsBeaten >= 15 },
 
-    { name: 'Pack Grandmaster', colour: '#ff9100', category: 'Packs', group: 'packs', description: 'Have the most packs completed out of everyone (ties all get it).', check: p => p.mostPacks },
+    { name: 'Pack Grandmaster', colour: '#ff9100', category: 'Packs', group: 'packs', description: 'Complete 20 or more packs.', check: p => p.packsCompleted >= 20 },
     { name: 'Pack Master', colour: '#ffab40', category: 'Packs', group: 'packs', description: 'Complete 10 or more packs.', check: p => p.packsCompleted >= 10 },
     { name: 'Pack Grinder', colour: '#ffc87a', category: 'Packs', group: 'packs', description: 'Complete 5 or more packs.', check: p => p.packsCompleted >= 5 },
     { name: 'Pack Victor', colour: '#ffe3bd', category: 'Packs', group: 'packs', description: 'Complete a pack.', check: p => p.packsCompleted >= 1 },
@@ -43,7 +43,7 @@ export const ROLES = [
 
 export const ROLE_CATEGORIES = ['Staff', 'Leaderboard', 'Hardest Level', 'Extremes', 'Verifying', 'Victors', 'Packs'];
 
-const isExtreme = level => (level.difficulty ?? '').toLowerCase() === 'extreme demon';
+const isExtreme = level => (level.difficulty ?? '').toLowerCase().startsWith('extreme demon');
 
 export function assignRoles(players, firstVictors, editors, top1Path) {
     const staffMap = {};
