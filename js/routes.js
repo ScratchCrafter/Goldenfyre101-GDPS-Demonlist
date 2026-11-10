@@ -3,6 +3,7 @@ import Leaderboard from './pages/Leaderboard.js';
 import Roulette from './pages/Roulette.js';
 import ListPacks from './pages/ListPacks.js';
 import UpcomingList from './pages/UpcomingList.js';
+import Roles from './pages/Roles.js';
 
 export default [
     { path: '/', component: List },
@@ -11,4 +12,5 @@ export default [
     { path: '/packs', component: ListPacks },
     { path: '/listpacks', component: ListPacks },
     { path: '/upcominglist', component: UpcomingList },
+    { path: '/roles', component: Roles },
 ];
