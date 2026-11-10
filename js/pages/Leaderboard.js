@@ -46,22 +46,22 @@ export default {
                     <div class="player">
                         <h1>#{{ selected + 1 }} {{ entry.user }}</h1>
                         <h3>{{ entry.total }}</h3>
+<div v-if="entry.roles && entry.roles.length" class="packs">
+    <span
+        v-for="role in entry.roles"
+        class="pack type-label-sm"
+        :style="'background-color: ' + role.colour + '; color: ' + getFontColour(role.colour)"
+    >
+        {{ role.name }}
+    </span>
+</div>
 <div v-if="entry.packs && entry.packs.length">
-    <h2>Packs</h2>
-
-    <div>
+    <h2>Packs ({{ entry.packs.length }})</h2>
+    <div class="packs">
         <span
             v-for="pack in entry.packs"
-            class="player-pack type-label-sm"
-            :style="{
-                backgroundColor: pack.colour,
-                color: getFontColour(pack.colour),
-                display: 'inline-block',
-                padding: '6px 10px',
-                marginRight: '8px',
-                marginBottom: '8px',
-                borderRadius: '6px'
-            }"
+            class="pack type-label-sm"
+            :style="'background-color: ' + pack.colour + '; color: ' + getFontColour(pack.colour)"
         >
             {{ pack.name }}
         </span>
