@@ -28,6 +28,7 @@
             href="/css/pages/listpacks.css"
         />
         <link rel="stylesheet" type="text/css" href="/css/pages/roulette.css" />
+        <link rel="stylesheet" type="text/css" href="/css/pages/roles.css" />
         <link rel="stylesheet" type="text/css" href="/css/components/nav.css" />
         <link rel="stylesheet" type="text/css" href="/css/components/btn.css" />
         <link
@@ -43,7 +44,7 @@
         <header :class="{ dark: store.dark }">
             <div class="logo">
                 <h2>Goldenfyre GDPS</h2>
-                <p>v1.3.5</p>
+                <p>v1.4</p>
             </div>
             <nav class="nav">
                 <router-link class="nav__tab" to="/">
@@ -54,6 +55,9 @@
                 </router-link>
                 <router-link class="nav__tab" to="/listpacks">
                 <span class="type-label-lg">Packs</span>
+                </router-link>
+                <router-link class="nav__tab" to="/roles">
+                    <span class="type-label-lg">Roles</span>
                 </router-link>
                 <router-link class="nav__tab" to="/roulette">
                     <span class="type-label-lg">Roulette</span>
@@ -87,4 +91,3 @@
         <router-view :class="{ dark: store.dark }"></router-view>
     </body>
     </html>
-
