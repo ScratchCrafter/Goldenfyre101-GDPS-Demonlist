@@ -1,4 +1,5 @@
 import { round, score } from './score.js';
+import { assignRoles } from './roles.js';
 
 /**
  * Path to directory containing `_list.json` and all levels
@@ -97,6 +98,7 @@ export async function fetchLeaderboard() {
 
     const scoreMap = {};
     const errs = [];
+    const firstVictors = {};
     list.forEach(([level, err], rank) => {
         if (err) {
             errs.push(err);
@@ -118,7 +120,19 @@ export async function fetchLeaderboard() {
             level: level.name,
             score: score(rank + 1, 100, level.percentToQualify),
             link: level.verification,
+            levelPath: level.path,
+            difficulty: level.enjoyment,
         });
+
+        // first victor = first 100% that isn't the verifier
+        const firstVictor = level.records.find(
+            (r) => r.percent === 100 &&
+                r.user.toLowerCase() !== level.verifier.toLowerCase(),
+        );
+        if (firstVictor) {
+            const key = firstVictor.user.toLowerCase();
+            firstVictors[key] = (firstVictors[key] ?? 0) + 1;
+        }
 
         // Records
         level.records.forEach((record) => {
@@ -137,6 +151,8 @@ export async function fetchLeaderboard() {
                     level: level.name,
                     score: score(rank + 1, 100, level.percentToQualify),
                     link: record.link,
+                    levelPath: level.path,
+                    difficulty: level.enjoyment,
                 });
                 return;
             }
@@ -195,7 +211,13 @@ const completedIds = new Set([
 /* =================================================== */
 
     // Sort by total score
-    return [res.sort((a, b) => b.total - a.total), errs];
+    res.sort((a, b) => b.total - a.total);
+
+    const editors = await fetchEditors();
+    const top1 = list.find(([level]) => level)?.[0];
+    assignRoles(res, firstVictors, editors, top1?.path);
+
+    return [res, errs];
 }
 export async function fetchPacks() {
     try {
