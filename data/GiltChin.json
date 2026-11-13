@@ -9,5 +9,11 @@
     "password": "Free To Copy",
     "enjoyment": "Extreme Demon (#1600-1400 AREDL)",
     "records": [
+        {
+           "user": "miokii",
+           "link": "https://www.youtube.com/watch?v=2u10OlIXGu4",
+           "percent": 100,
+           "hz": 240
+              }
     ]
 }
