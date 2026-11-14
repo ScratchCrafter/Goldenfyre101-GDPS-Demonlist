@@ -178,6 +178,7 @@ export async function fetchLeaderboard() {
             user,
             total: round(total),
             packs: [],
+            nearPacks: [],
             ...scores,
         };
     });
@@ -205,8 +206,21 @@ const completedIds = new Set([
                 completedIds.has(levelId)
             );
         });
+
+        player.nearPacks = packs
+            .map(pack => {
+                const levels = pack.levels ?? [];
+                const done = levels.filter(l => completedIds.has(l)).length;
+                return { ...pack, done, total: levels.length };
+            })
+            .filter(p => p.total >= 2 && p.done === p.total - 1);
     });
 }
+
+    res.forEach(player => {
+        player.packBonus = player.packs.reduce((sum, pack) => sum + (pack.reward ?? 0), 0);
+        player.total = round(player.total + player.packBonus);
+    });
 
 /* =================================================== */
 
@@ -221,8 +235,8 @@ const completedIds = new Set([
 }
 export async function fetchPacks() {
     try {
-        const res = await fetch(`${dir}/_packlist.json`);
-        return await res.json();
+        const packs = await fetch(`${dir}/_packlist.json`).then(r => r.json());
+        return packs.map(pack => ({ ...pack, reward: pack.points ?? 0 }));
     } catch {
         return null;
     }
