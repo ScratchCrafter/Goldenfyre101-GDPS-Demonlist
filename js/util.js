@@ -13,7 +13,7 @@ export function getFontColour(background) {
 
     const brightness = (r * 299 + g * 587 + b * 114) / 1000;
 
-    return brightness > 128 ? "#000" : "#fff";
+    return brightness > 170 ? "#000" : "#fff";
 }
 export function embed(video) {
     return `https://www.youtube.com/embed/${getYoutubeIdFromUrl(video)}`;
