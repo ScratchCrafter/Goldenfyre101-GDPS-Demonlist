@@ -119,3 +119,12 @@
 .page-leaderboard .player .pack:hover {
     opacity: 1;
 }
+.page-leaderboard .player .pack-bonus {
+    color: var(--color-primary);
+}
+.page-leaderboard .player .near-packs {
+    margin-top: 24px;
+}
+.page-leaderboard .player .near-packs .pack {
+    opacity: 0.65;
+}
