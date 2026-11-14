@@ -41,8 +41,7 @@
 
 .packs-nav button p {
   margin: 0;
-  mix-blend-mode: difference;
-  color: rgb(128, 128, 128);
+  color: inherit;
 }
 
 /* =========================
