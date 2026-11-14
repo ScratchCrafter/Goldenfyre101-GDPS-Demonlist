@@ -101,6 +101,10 @@ export default {
                     ></iframe>
 
                     <ul class="stats">
+                    <li v-if="pack && pack.reward">
+                        <div class="type-title-sm">Pack Reward</div>
+                        <p>+{{ pack.reward }}</p>
+                    </li>
                     <li>
                         <div class="type-title-sm">ID</div>
                         <p>{{ selectedPackLevels[selectedLevel][0].level.id }}</p>
