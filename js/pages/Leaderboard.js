@@ -55,15 +55,24 @@ export default {
         {{ role.name }}
     </span>
 </div>
-<div v-if="entry.packs && entry.packs.length">
-    <h2>Packs ({{ entry.packs.length }})</h2>
+<div v-if="(entry.packs && entry.packs.length) || (entry.nearPacks && entry.nearPacks.length)">
+    <h2>Packs ({{ entry.packs.length }}) <span class="pack-bonus">+{{ entry.packBonus }}</span></h2>
     <div class="packs">
         <span
             v-for="pack in entry.packs"
             class="pack type-label-sm"
             :style="'background-color: ' + pack.colour + '; color: ' + getFontColour(pack.colour)"
         >
-            {{ pack.name }}
+            {{ pack.name }} +{{ pack.reward }}
+        </span>
+    </div>
+    <div v-if="entry.nearPacks && entry.nearPacks.length" class="packs near-packs">
+        <span
+            v-for="pack in entry.nearPacks"
+            class="pack type-label-sm"
+            :style="'background-color: ' + pack.colour + '; color: ' + getFontColour(pack.colour)"
+        >
+            {{ pack.name }} {{ pack.done }}/{{ pack.total }}
         </span>
     </div>
 </div>
