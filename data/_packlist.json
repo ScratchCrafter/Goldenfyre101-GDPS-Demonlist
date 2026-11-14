@@ -2,143 +2,119 @@
   {
     "name": "Top 1 Pack",
     "levels": [
-      "EGGNEVERCLEARRE",
+      "TheAbyss",
       "GoldenfyreChallenge",
-      "TheAbyss"
+      "EGGNEVERCLEARRE",
+      "NoCure"
     ],
-    "colour": "#e64843"
+    "colour": "#ff0000",
+    "points": 50
   },
   {
-    "name": "XL Pack",
+    "name": "The Beeguy Pack",
     "levels": [
-      "Darkness",
-      "growingonme",
-      "TheKiller"
+      "ToBeComplete",
+      "Budgetscapes",
+      "DancingUntilIFall",
+      "InItsRightPlace"
     ],
-    "colour": "#ff54af"
+    "colour": "#ff69b4",
+    "points": 30
   },
   {
-    "name": "XL Pack II",
+    "name": "The Beeguy Pack II",
     "levels": [
-      "DeepEnd",
-      "Firewall",
-      "SaveMe"
+      "LancerDeltarune",
+      "DoodleRush",
+      "Petal",
+      "TheSuperCatguy"
     ],
-    "colour": "#f21b8e"
+    "colour": "#e0108a",
+    "points": 40
   },
   {
-    "name": "XL Pack III",
+    "name": "Inspiration Pack",
     "levels": [
-      "EveryEndLeashed",
-      "XENOSCAPE"
+      "PlasmaPulseX",
+      "TheCityOfBattle",
+      "MIOKIIALWAYSCLEAR",
+      "Aurora"
     ],
-    "colour": "#db0979"
+    "colour": "#ffee00",
+    "points": 40
+  },
+  {
+    "name": "Light Pack",
+    "levels": [
+      "SHINING",
+      "GLEAMING",
+      "GLORINESS",
+      "BRIGHTNESS"
+    ],
+    "colour": "#ffffff",
+    "points": 40
   },
   {
     "name": "Rarr Pack",
     "levels": [
       "Pyrarrmaniac",
       "planetrarrium",
-      "LimboButRarrIg"
+      "LimboButRarrIg",
+      "Interstellrarr"
     ],
-    "colour": "#ffc39c"
+    "colour": "#ffd28a",
+    "points": 40
   },
   {
-    "name": "The Epik Pack",
+    "name": "XL Pack",
     "levels": [
-      "SHINING",
-      "NoSurprises",
-      "GLORINESS",
-      "BRIGHTNESS",
-      "EGGNEVERCLEARRE"
-    ],
-    "colour": "#fff538"
-  },
-  {
-    "name": "The Quacc Pack",
-    "levels": [
-      "CutYouOff",
-      "HappyBirthdayGoldie",
-      "Heatwave"
-    ],
-    "colour": "#ffac38"
-  },
-  {
-    "name": "The Nange Pack",
-    "levels": [
-      "Bananas",
-      "Stroll",
-      "Pyrarrmaniac",
-      "GoldenfyreChallenge",
-      "NoCure"
-    ],
-    "colour": "#ffac38"
-  },
-  {
-    "name": "The Beeguy Pack",
-    "levels": [
-      "ToBeComplete",
+      "Darkness",
       "TheKiller",
-      "LancerDeltarune",
-      "InItsRightPlace",
-      "DoodleRush",
-      "Petal",
-      "RareAnimal",
-      "HAILTOTHETHIEF"
+      "Paparazzi",
+      "OnlyYou"
     ],
-    "colour": "#bcff47"
+    "colour": "#6a5cff",
+    "points": 25
   },
   {
-    "name": "Mac n Cheese Pack",
+    "name": "XL Pack II",
     "levels": [
-      "Chess",
-      "MIOKIIALWAYSCLEAR"
+      "SaveMe",
+      "Firewall",
+      "XENOSCAPE"
     ],
-    "colour": "#ffb92e"
+    "colour": "#4b3fd1",
+    "points": 30
   },
   {
-    "name": "Collaboration Pack",
+    "name": "XXL+ Pack",
     "levels": [
-      "HappyBirthdayGoldie",
-      "XENOSCAPE",
-      "Pyrarrmaniac"
+      "DeepEnd",
+      "EveryEndLeashed",
+      "growingonme"
     ],
-    "colour": "#c338ff"
+    "colour": "#3226a3",
+    "points": 35
   },
   {
-    "name": "Gamer862 Verification Pack",
+    "name": "Nine Circles Pack",
     "levels": [
-      "NoSurprises",
-      "MyMeat",
-      "EGGNEVERCLEARRE"
+      "FutureCircles",
+      "Stratus",
+      "ProcessedMachine"
     ],
-    "colour": "#5c70f7"
+    "colour": "#ff4d4d",
+    "points": 25
   },
   {
-    "name": "Gamer862 Verification Pack II",
+    "name": "Nine Circles Pack II",
     "levels": [
-      "BRIGHTNESS",
-      "PlanumAstrale",
-      "TheAbyss"
+      "BlankPlanet",
+      "Sonicbreaker",
+      "ColonThreeCircles"
     ],
-    "colour": "#3346c4"
-  },
-  {
-    "name": "Emmber Verification Pack",
-    "levels": [
-      "Stalemate",
-      "EveryEndLeashed"
-    ],
-    "colour": "#f2c13a"
-  },
-  {
-    "name": "Emmber Verification Pack II",
-    "levels": [
-      "Octane",
-      "SixxSevvend",
-      "Sakupenhouse"
-    ],
-    "colour": "#dba307"
+    "colour": "#c81e1e",
+    "points": 35
   },
   {
     "name": "Caesium Factorial Pack",
@@ -147,80 +123,48 @@
       "CaesiumFactorial2",
       "CaesiumFactorial3"
     ],
-    "colour": "#2db50e"
+    "colour": "#ff7a00",
+    "points": 35
   },
   {
-    "name": "Nine Circles Pack",
+    "name": "Joke Pack",
     "levels": [
-      "FutureCircles",
-      "BlankPlanet",
-      "ColonThreeCircles"
+      "LARP",
+      "TungWaveTrials",
+      "Bananas",
+      "MyMeat"
     ],
-    "colour": "#61ffff"
+    "colour": "#22e04a",
+    "points": 30
   },
   {
-    "name": "Nine Circles Pack II",
+    "name": "Goldenfyre Pack",
     "levels": [
-      "NoCure",
-      "Heatwave"
+      "TormentedSentience",
+      "MoonshipWelters",
+      "KineticDisorption"
     ],
-    "colour": "#09d9d9"
+    "colour": "#ffc300",
+    "points": 25
   },
   {
-    "name": "One Gamemode Pack",
+    "name": "Flow Pack",
     "levels": [
-      "CutYouOff",
-      "ReturnEnd",
-      "ViprinSpider"
+      "Runaway",
+      "RadiationWave",
+      "Thumper"
     ],
-    "colour": "#8d30ff"
+    "colour": "#5e8bff",
+    "points": 20
   },
   {
-    "name": "One Gamemode Pack II",
+    "name": "Flow Pack II",
     "levels": [
-      "EveryEndLeashed",
-      "PlanumAstrale"
+      "Chess",
+      "FastTravel",
+      "CriesForTheLonely"
     ],
-    "colour": "#6f10e3"
-  },
-  {
-    "name": "Challenge Pack",
-    "levels": [
-      "DeadmansHandle",
-      "LancerDeltarune",
-      "ReturnEnd",
-      "SHINING"
-    ],
-    "colour": "#f75252"
-  },
-  {
-    "name": "Challenge Pack II",
-    "levels": [
-      "Gate",
-      "BRIGHTNESS",
-      "GoingHome",
-      "Heatwave"
-    ],
-    "colour": "#c94242"
-  },
-  {
-    "name": "Inspiration Pack",
-    "levels": [
-      "LimboButRarrIg",
-      "EveryEndLeashed",
-      "TheCityOfBattle",
-      "MIOKIIALWAYSCLEAR"
-    ],
-    "colour": "#f7f252"
-  },
-  {
-    "name": "Inspiration Pack II",
-    "levels": [
-      "Pyrarrmaniac",
-      "GoingHome",
-      "SixxSevvend",
-      "Sakupenhouse"
-    ],
-    "colour": "#ccc743"
+    "colour": "#3f6be0",
+    "points": 25
   }
 ]
